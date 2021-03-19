@@ -63,7 +63,7 @@ public class sim {
     }
 
     public void aggiungiChiamata(String t, double m) {
-        System.out.println("Attenzione, ogni chiamata consumera 0,10 euro di credito.");
+        
         if (getCredito() >= 0.10) {
             telefonate.add(new telefonata(t, m));
             setCredito(getCredito() - 0.10);
@@ -94,6 +94,20 @@ public class sim {
 
         }
         System.out.println("Il numero è stato chiamato " + String.valueOf(n) + " volte, per un totale di " + String.valueOf(m) + " minuti.");
+    }
+    
+    public void resoconto(){
+    
+        //Dati sim
+        System.out.println("Numero: " + getTelefono() + ", credito: " + String.valueOf(getCredito()) + " euro.");
+        
+        //Registro chiamate
+        System.out.println("Registro chiamate: ");
+        for (int i = 0; i < telefonate.size(); i++) {
+            
+            System.out.println( String.valueOf(i+1) + "-" + telefonate.get(i).getTelefono() + ", " + String.valueOf(telefonate.get(i).getMinuti()) + " minuti.");
+            
+        }
     }
    
 }

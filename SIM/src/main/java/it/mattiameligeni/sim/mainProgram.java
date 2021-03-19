@@ -16,11 +16,11 @@ public class mainProgram {
         while (true) {            
             int scelta;
             System.out.println("---------------------------");
-            System.out.println("Digita 1 per inserire una nuova chiamata");
+            System.out.println("Digita 1 per inserire una nuova chiamata (System.out.println(Attenzione, ogni chiamata consumera 0,10 euro di credito.)");
             System.out.println("Digita 2 per stampare i minuti totali di conversazione");
             System.out.println("Digita 3 per stampare il numero di telefonate verso un determinato telefono");
             System.out.println("Digita 4 per ricaricare");
-            System.out.println("Digita 5 per stampare i dati della sim");
+            System.out.println("Digita 5 per stampare i dati della sim, e il registro chiamate");
             System.out.println("Digita 6 per uscire\n:");
             scan = new Scanner(System.in);
             scelta = scan.nextInt();
@@ -45,7 +45,7 @@ public class mainProgram {
                     s1.setCredito(s1.getCredito()+scan.nextDouble());
                     break;
                 case 5:
-                    System.out.println("Numero: " + s1.getTelefono() + ", credito: " + String.valueOf(s1.getCredito()) + " euro.");
+                    s1.resoconto();
                     break;
                 case 6:
                     System.exit(0);
